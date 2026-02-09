@@ -1,0 +1,25 @@
+memory setfile "/Memory/ram"
+
+//для удобства. создаем файлик как то обзываем строку и погнал
+INT tmp tmp = 0
+FLOAT lol lol = 15.3
+
+print tmp
+
+FOR i 10 1
+//action
+END FOR
+
+
+clear
+set color
+set text color
+set text size
+set text font
+set cursor
+
+memory readline 0 <filename>
+memory readline s <filename>
+memory createFile <dir> <name>
+memory delete <filename>
+
