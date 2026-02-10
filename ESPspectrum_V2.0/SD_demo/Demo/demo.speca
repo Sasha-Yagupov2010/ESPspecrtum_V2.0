@@ -10,6 +10,12 @@ FOR i 10 1
 //action
 END FOR
 
+IF <>
+
+ELSE
+noelse
+
+ENDIF
 
 clear
 set color
