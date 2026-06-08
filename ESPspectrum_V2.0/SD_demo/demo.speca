@@ -17,12 +17,18 @@ noelse
 
 ENDIF
 
-clear
-set color
+
 set text color
 set text size
 set text font
-set cursor
+
+vga print text <>
+vga println text <>
+vga clear
+vga setcursor x y
+vga rect
+vga circle
+
 
 memory readline 0 <filename>
 memory readline s <filename>

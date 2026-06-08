@@ -1,9 +1,0 @@
-##### OS Menu #####
-
-1 - Free print
-2 - Calculator
-3 - FileManager
-4 - GameManager
-5 - Restart OS
-
-------------------- 
