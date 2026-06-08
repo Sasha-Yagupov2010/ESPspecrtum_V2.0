@@ -1,6 +1,7 @@
-void IRAM_ATTR onClockFall() ;
-String get_key();
-void setup_keyboard();
+#include "progfiles/Core.h"
+#include "progfiles/Disk_Driver.h"
+#include "progfiles/Keyboard.h"
+#include "progfiles/Speakers.h"
 
 #include <ESP32Lib.h>
 #include <Ressources/Font6x8.h>

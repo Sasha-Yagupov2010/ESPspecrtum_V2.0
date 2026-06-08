@@ -137,6 +137,22 @@ String readFile(String filename){
   return content;
 }
 
+int get_line_count(String filename){
+  File dataFile = SD.open(filename, FILE_READ);
+  int currentLine = 0;
+  
+  if(dataFile) {
+    while(dataFile.available()) {
+      line = dataFile.readStringUntil('\n');
+      line.trim();
+      currentLine++;
+    }
+    dataFile.close();
+  }
+  
+  return currentLine; 
+}
+
 // Дополнительная функция: добавление данных в конец файла
 void appendFile(String filename, String data){
   File dataFile = SD.open(filename, FILE_APPEND);
