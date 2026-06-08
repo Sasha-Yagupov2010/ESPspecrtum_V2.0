@@ -47,10 +47,11 @@ void setup(){
   delay(1000);
   vga.setCursor(0, 0);
 
-  if(!check_os())return;
+  if(!check_os()) return;
   delay(100);
 }
 
 void loop(){
-
+  osLoop();
+  return;
 }
