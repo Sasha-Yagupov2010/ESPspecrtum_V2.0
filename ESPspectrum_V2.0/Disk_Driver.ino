@@ -9,14 +9,11 @@ bool check_os(){
     return false;
   }
 
-
-  if (!SD.exists("/Scripts/") or !SD.exists("/Memory/")) {
-    vga.println("Os error"); 
-    Serial.println("Os error");
-    delay(2000); 
-    vga.clear(vga.RGB(0, 0, 0)); 
-    vga.setCursor(0, 0); 
-    return false;
+  if (!SD.exists("/Scripts") || !SD.exists("/Memory")) {
+      // Создаем папки если они не существуют
+      SD.mkdir("/Scripts");
+      SD.mkdir("/Memory");
+      Serial.println("Created directories: /Scripts/ and /Memory/");
   }
 
 
@@ -138,19 +135,20 @@ String readFile(String filename){
 }
 
 int get_line_count(String filename){
-  File dataFile = SD.open(filename, FILE_READ);
-  int currentLine = 0;
-  
-  if(dataFile) {
-    while(dataFile.available()) {
-      line = dataFile.readStringUntil('\n');
-      line.trim();
-      currentLine++;
+    String line="";
+    File dataFile = SD.open(filename, FILE_READ);
+    int currentLine = 0;
+    
+    if(dataFile) {
+        while(dataFile.available()) {
+            line = dataFile.readStringUntil('\n');
+            line.trim();
+            currentLine++;
+        }
+        dataFile.close();
     }
-    dataFile.close();
-  }
-  
-  return currentLine; 
+    
+    return currentLine; 
 }
 
 // Дополнительная функция: добавление данных в конец файла

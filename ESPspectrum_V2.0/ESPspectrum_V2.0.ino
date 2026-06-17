@@ -1,7 +1,26 @@
-#include "progfiles/Core.h"
-#include "progfiles/Disk_Driver.h"
-#include "progfiles/Keyboard.h"
-#include "progfiles/Speakers.h"
+// Прототипы функций из Disk_Driver.ino
+bool check_os();
+void saveData(String filename, String name, String value);
+String readLine(String filename, int lineNumber);
+String readValue(String filename, String name);
+void writeFile(String filename, String data);
+String readFile(String filename);
+int get_line_count(String filename);
+void appendFile(String filename, String data);
+
+// Прототипы функций из Keyboard.ino
+void setup_keyboard();
+String get_key();
+
+// Прототипы функций из Core.ino
+void osLoop();
+void run_cmd(String cmd);
+
+// Прототипы функций из Speacers.ino
+void setup_speaker(int pin);
+void create_tone(int pin, int frequency);
+void create_tone(int pin, int frequency, int duration);
+void disable_tone(int pin);
 
 #include <ESP32Lib.h>
 #include <Ressources/Font6x8.h>
@@ -20,6 +39,7 @@ const int vsyncPin = 4;
 #define DATA 17  //D+
 #define SD_PIN 5
 
+const int SPEAKER_PIN = 25;  // Выберите подходящий пин для динамика
 
 const bool developMode = true;
 
@@ -53,6 +73,7 @@ void setup(){
 }
 
 void loop(){
+  Serial.println("enter loop");
   osLoop();
   return;
 }
