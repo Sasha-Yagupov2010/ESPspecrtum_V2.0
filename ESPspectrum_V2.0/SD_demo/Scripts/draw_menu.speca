@@ -1,0 +1,11 @@
+
+vga setcursor 0 0
+vga println "##### OS Menu #####"
+vga println ""
+vga println "1 - Free print"
+vga println "2 - Calculator"
+vga println "3 - FileManager"
+vga println "4 - GameManager"
+vga println "5 - Restart OS"
+vga println ""
+vga println "-------------------" 
