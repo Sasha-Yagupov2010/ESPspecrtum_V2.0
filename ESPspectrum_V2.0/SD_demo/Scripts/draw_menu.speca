@@ -1,6 +1,6 @@
 
 vga setcursor 0 0
-vga println "##### OS Menu #####"
+vga println "ESP32 OS
 vga println ""
 vga println "1 - Free print"
 vga println "2 - Calculator"

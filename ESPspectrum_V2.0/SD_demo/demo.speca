@@ -1,10 +1,9 @@
-memory setfile "/Memory/ram.txt"
+
 
 //для удобства. создаем файлик как то обзываем строку и погнал
 INT tmp = 0
 FLOAT lol = 15.3
 
-print tmp
 
 FOR i 10 1
 //action
@@ -18,20 +17,22 @@ noelse
 ENDIF
 
 
-set text color
-set text size
-set text font
+set text color ' '
+set text size x
 
-vga print text <>
-vga println text <>
+vga print text ' ' //vga print int x float
+vga println text ' ' //int float
 vga clear
 vga setcursor x y
-vga rect
-vga circle
 
 
-memory readline 0 <filename>
-memory readline s <filename>
-memory createFile <dir> <name>
-memory delete <filename>
+memory readline linenumber 'filename'
+memory createFile 'fullname'
+memory delete 'filename'
+
+memory set romfile '/Memory/rom.txt'
+memory rom save int(float string) 'name'
+memory rom read 'name'
+
+
 

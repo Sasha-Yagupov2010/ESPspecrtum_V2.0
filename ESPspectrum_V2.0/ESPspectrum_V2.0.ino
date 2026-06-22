@@ -15,6 +15,15 @@ String get_key();
 // Прототипы функций из Core.ino
 void osLoop();
 void run_cmd(String cmd);
+void run_script_file(String path);
+int splitCommand(String input, String* result, int maxParts);
+String removeQuotes(String str);
+bool isValidInt(String str);
+bool isValidFloat(String str);
+void handleVGACommand(String* parts, uint8_t count);
+void handleSetCommand(String* parts, uint8_t count);
+void handleMemoryCommand(String* parts, uint8_t count);
+void free_print();
 
 // Прототипы функций из Speacers.ino
 void setup_speaker(int pin);
